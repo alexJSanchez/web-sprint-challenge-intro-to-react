@@ -5,7 +5,9 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [cards , setCards] = useState();
+
   
+
 
   useEffect(() => {
     axios.get("https://swapi.dev/api/people")
@@ -23,7 +25,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>  
-    {cards && <CharacterCard content={cards} ></CharacterCard>}
+    {cards && <CharacterCard content={cards}></CharacterCard>}
+   
     </div>
   );
 }

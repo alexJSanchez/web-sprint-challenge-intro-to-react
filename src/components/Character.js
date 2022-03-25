@@ -3,7 +3,7 @@ import React from "react";
 import { Alert } from 'reactstrap';
 import styled from 'styled-components'
 
-const Characters = styled.span`
+const Characters = styled.main`
 color:black;
 `
 const CharacterDescription = styled.ul`
@@ -11,7 +11,10 @@ const CharacterDescription = styled.ul`
  display:flex;
  justify-content:space-around;
  color:red;
- font-size:24px;
+`
+const NameButton = styled.button`
+    background-color:blue;
+    color:red;
 `
 
 function CharacterCard(props){
@@ -20,12 +23,24 @@ function CharacterCard(props){
    <div>
             {props.content.map((element, index) => {
               return <Characters key={index}>
-              <h2>{element.name}</h2> 
+              <NameButton>{element.name}</NameButton> 
             <CharacterDescription>
-             <li>{`Birth Date:` + element["birth_year"]}</li>
-             <li> {element["eye_color"]}</li>
-             <li> {element["skin_color"]}</li>
-             <li> {element.height}</li>
+                <li>
+                  <h3>Birth Year</h3>
+                  {element["birth_year"]}
+                </li>
+                <li> 
+                    <h3>Eye Color</h3>
+                 {element["eye_color"]}
+                </li>
+                <li>
+                    <h3>Skin Color</h3> 
+                    {element["skin_color"]}
+                </li>
+                <li> 
+                    <h3>Height</h3>
+                    {element.height}
+                </li>
             </CharacterDescription>
              </Characters> 
             })}
