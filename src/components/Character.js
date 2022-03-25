@@ -13,7 +13,12 @@ function CharacterCard(props){
    <div>
         <ul>
             {props.content.map((element, index) => {
-              return <Characters key={index}>{element.name},{element["birth_year"]},{element["eye_color"]},{element["skin_color"]},{element.height}</Characters> 
+              return <Characters key={index}>
+              <h2>{element.name}</h2> 
+              {element["birth_year"]},
+              {element["eye_color"]},
+              {element["skin_color"]},
+              {element.height}</Characters> 
             })}
         </ul>
    </div>
@@ -21,3 +26,12 @@ function CharacterCard(props){
 }
 
 export default CharacterCard;
+
+
+// <h2>{element.name}</h2>
+// <ul>
+//     <li>{element["birth_year"]}</li>
+//     <li>{element["eye_color"]}</li>
+//     <li>{element["skin_color"]}</li>
+//     <li>{element.height}</li>
+// </ul>
