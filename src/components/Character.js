@@ -3,15 +3,17 @@ import React from "react";
 import { Alert } from 'reactstrap';
 import styled from 'styled-components'
 
-const Characters = styled.main`
+const Characters = styled.div`
 color:black;
 `
 const CharacterDescription = styled.ul`
 display:flex;
 justify-content:center;
+
  list-style:none;
  display:flex;
  color:#3A6BBF;
+ background-color:black;
 `
 const NameButton = styled.button`
     background-color:#846D92;
