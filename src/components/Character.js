@@ -7,14 +7,21 @@ const Characters = styled.main`
 color:black;
 `
 const CharacterDescription = styled.ul`
+display:flex;
+justify-content:center;
  list-style:none;
  display:flex;
- justify-content:space-around;
- color:red;
+ color:#3A6BBF;
 `
 const NameButton = styled.button`
-    background-color:blue;
-    color:red;
+    background-color:#846D92;
+    padding:10px;
+    border-radius:10px;
+    color:#58A2A7;
+    font-size:20px;
+`
+const ListItem = styled.li`
+    margin:10px;
 `
 
 function CharacterCard(props){
@@ -25,22 +32,22 @@ function CharacterCard(props){
               return <Characters key={index}>
               <NameButton>{element.name}</NameButton> 
             <CharacterDescription>
-                <li>
+                <ListItem>
                   <h3>Birth Year</h3>
-                  {element["birth_year"]}
-                </li>
-                <li> 
+                  <h4>{element["birth_year"]}</h4>
+                </ListItem>
+                <ListItem> 
                     <h3>Eye Color</h3>
-                 {element["eye_color"]}
-                </li>
-                <li>
+                <h4>{element["eye_color"]}</h4>
+                </ListItem>
+                <ListItem>
                     <h3>Skin Color</h3> 
-                    {element["skin_color"]}
-                </li>
-                <li> 
+                   <h4>{element["skin_color"]}</h4>
+                </ListItem>
+                <ListItem> 
                     <h3>Height</h3>
-                    {element.height}
-                </li>
+                   <h4> {element.height} </h4>
+                </ListItem>
             </CharacterDescription>
              </Characters> 
             })}
