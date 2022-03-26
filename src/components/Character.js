@@ -1,5 +1,5 @@
 // Write your Character component here
-import React from "react";
+import React, {useState} from "react";
 import { Alert } from 'reactstrap';
 import styled from 'styled-components'
 
@@ -28,12 +28,14 @@ const ListItem = styled.li`
 
 function CharacterCard(props){
     console.log(props)
+    const [active, setActive] = useState(false);
+
     return(
    <div>
             {props.content.map((element, index) => {
               return <Characters key={index}>
-              <NameButton>{element.name}</NameButton> 
-            <CharacterDescription>
+              <NameButton onClick={() => setActive(true)}>{element.name}</NameButton> 
+         {active ? <CharacterDescription>
                 <ListItem>
                   <h3>Birth Year</h3>
                   <h4>{element["birth_year"]}</h4>
@@ -50,7 +52,7 @@ function CharacterCard(props){
                     <h3>Height</h3>
                    <h4> {element.height} </h4>
                 </ListItem>
-            </CharacterDescription>
+            </CharacterDescription> : ''}
              </Characters> 
             })}
    </div>
