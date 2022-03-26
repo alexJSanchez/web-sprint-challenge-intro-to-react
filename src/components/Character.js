@@ -28,13 +28,13 @@ const ListItem = styled.li`
 
 function CharacterCard(props){
     console.log(props)
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState();
 
     return(
    <div>
             {props.content.map((element, index) => {
               return <Characters key={index}>
-              <NameButton onClick={() => setActive(true)}>{element.name}</NameButton> 
+              <NameButton onClick={() => {active ? setActive(false): setActive(true)}}>{element.name}</NameButton> 
          {active ? <CharacterDescription>
                 <ListItem>
                   <h3>Birth Year</h3>
