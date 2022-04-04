@@ -9,7 +9,7 @@ const App = () => {
 
 
   useEffect(() => {
-    axios.get("https://swapi.dev/api/people/")
+    axios.get("https://swapi.dev/api/people")
     .then(resp => {
   //  console.log(resp.data.results)
   setCards(resp.data.results)
